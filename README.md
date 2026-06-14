@@ -1,16 +1,18 @@
-<p align="left">
-  <img src="assets/logo.png" alt="Prompt leaking project logo" width="120">
-</p>
-
 # Understanding and Mitigating Prompt Leaking Attacks
+
+---
+
+<p align="center">
+  <img src="assets/logo.png" alt="Prompt leaking project logo" width="180">
+</p>
 
 This repository contains the open-source artifacts for the ACM CCS 2026 paper **"Understanding and Mitigating Prompt Leaking Attacks in Real-World LLM-Based Applications"**. It includes the benchmark data, measurement artifacts, defense implementations, attention-analysis scripts, and AREA reproduction code used in the paper.
 
 ## Overview
 
-Large language model (LLM)-based applications rely on system prompts to encode core logic and developer-defined constraints, making these prompts a critical form of intellectual property. However, system prompts are highly vulnerable to prompt leaking attacks. While prior work has demonstrated such attacks in controlled settings, their prevalence, root causes, and practical defenses in real-world deployments remain insufficiently understood.
+LLM-based applications rely on system prompts to encode core logic and developer-defined constraints, but these prompts are vulnerable to prompt-leaking attacks. This paper studies prompt leakage in real-world deployments, analyzes why existing defenses fail, and proposes **AREA (Attention Re-Anchoring)** as a practical mitigation.
 
-This work provides a systematic investigation of prompt leaking in real-world LLM-based applications. First, it measures 1,200 applications across six major commercial platforms and finds that over 80% of deployments leak system prompts under realistic adversarial queries, sometimes exposing sensitive information such as third-party API keys. Second, it evaluates existing defenses and shows that they often fail to prevent leakage without degrading usability. Third, it performs an attention-level mechanistic analysis and identifies **attention drift**, where query-key alignment bias and softmax amplification cause LLMs to progressively ignore defensive constraints. Guided by these findings, the paper proposes **AREA (Attention Re-Anchoring)**, a practical defense that uses an optimizable soft prompt to re-anchor attention toward defensive instructions. Experiments and real-world case studies show that AREA matches the leakage resistance of state-of-the-art defenses while improving average usability by over 33% and reducing optimization overhead by nearly 3x.
+The study measures 1,200 applications across six commercial platforms, evaluates baseline defenses, and identifies **attention drift** as a key mechanism behind prompt leakage. AREA uses an optimizable soft prompt to re-anchor model attention toward defensive instructions, matching strong leakage resistance while improving usability and reducing optimization overhead.
 
 <p align="center">
   <img src="assets/overview.png" alt="Overview of prompt leaking study and AREA defense" width="900">
