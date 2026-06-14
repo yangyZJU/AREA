@@ -1,8 +1,8 @@
-# Understanding and Mitigating Prompt Leaking Attacks
-
-<p align="center">
-  <img src="assets/logo.png" alt="Prompt leaking project logo" width="520">
+<p align="left">
+  <img src="assets/logo.png" alt="Prompt leaking project logo" width="120">
 </p>
+
+# Understanding and Mitigating Prompt Leaking Attacks
 
 This repository contains the open-source artifacts for the ACM CCS 2026 paper **"Understanding and Mitigating Prompt Leaking Attacks in Real-World LLM-Based Applications"**. It includes the benchmark data, measurement artifacts, defense implementations, attention-analysis scripts, and AREA reproduction code used in the paper.
 
