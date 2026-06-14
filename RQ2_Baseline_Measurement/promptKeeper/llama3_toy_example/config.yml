@@ -1,0 +1,10 @@
+model: meta-llama/Llama-3.1-8B-Instruct
+translate_model: gpt-35-turbo
+embed_model: text-embedding-ada-002
+defense_mode:
+  - name: mll_test_regen_005
+    hypothesis_test_significance: 0.05
+system_prompt_dir: system_prompt/system_prompts.csv
+user_query_dir: user_query/llama3_adversarial_query.json
+res_dir: ./llama3_toy_example
+num_resp_per_query: 1
